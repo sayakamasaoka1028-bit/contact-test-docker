@@ -57,3 +57,101 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+# お問い合わせフォーム（確認テスト提出用）
+
+このアプリケーションは、お問い合わせフォームおよび管理画面で構成される Laravel アプリです。
+
+---
+
+## 📌 使用技術
+- Laravel 10+
+- PHP 8.2
+- SQLite
+- Tailwind CSS
+- Breeze（認証周り）
+- GitHub でバージョン管理
+
+---
+
+## 📌 機能一覧
+
+### ■ お問い合わせフォーム（一般ユーザー）
+- 入力画面 
+- 確認画面 
+- 完了（サンクス）画面 
+- バリデーション 
+- DB 保存 
+
+### ■ 管理画面（管理者ユーザー）
+- ログイン必須（認証）
+- 一覧表示（ページネーション）
+- 検索機能 
+  - 氏名 
+  - 性別 
+  - お問い合わせ種類 
+  - 日付範囲 
+- 詳細モーダル表示 
+- 削除機能 
+
+---
+## 📸 画面キャプチャ
+
+### ▼ 入力画面
+![input](./スクリーンショット%202025-11-24%20155556.png)
+
+### ▼ 確認画面
+![confirm](./スクリーンショット%202025-11-24%20155614%20-%20コピー.png)
+
+### ▼ サンクス画面
+![thanks](./スクリーンショット%202025-11-24%20155605.png)
+
+### ▼ ログイン画面
+![login](./スクリーンショット%202025-11-24%20155715.png)
+
+### ▼ 管理画面（一覧）
+![admin](./スクリーンショット%202025-11-24%201157302.png)
+
+### ▼ 管理画面（詳細モーダル）
+![detail](./スクリーンショット%202025-11-24%20155733.png)
+
+
+---
+
+## 📦 セットアップ
+
+
+---
+
+## ✨ 備考
+- Breeze を使って認証機能を実装
+- TailwindCSS によるスタイリング
+- UI は提出課題のデザインに合わせて調整
+
+```bash
+git clone (https://github.com/sayakamasaoka1028-bit/contact-test-.git)
+cd contact-test-
+
+composer install
+npm install
+npm run build
+
+cp .env.example .env
+php artisan key:generate
+
+touch database/database.sqlite
+
+php artisan migrate
+php artisan serve
+```
+
+---
+
+## ✨ 備考
+- Breeze を使って認証機能を実装
+- TailwindCSS によるスタイリング
+- UI は提出課題のデザインに合わせて調整
+
+

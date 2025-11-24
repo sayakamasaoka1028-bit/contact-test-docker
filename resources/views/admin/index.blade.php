@@ -17,10 +17,14 @@
         </h1>
 
        <!-- 右端固定 Logout -->
-        <a href="#"
-           class="absolute right-4 text-sm text-gray-600 hover:text-gray-800">
-            Logout
-        </a>
+       <form method="POST" action="{{ route('logout') }}" class="absolute right-4">
+       @csrf
+        <button class="text-sm text-gray-600 hover:text-gray-800">
+       Logout
+       </button>
+        </form>
+
+
         </div>
     </div>
 <div class="max-w-5xl mx-auto bg-white shadow-md rounded p-6">
