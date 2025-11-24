@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminController;
 
 // ▼ トップページをお問い合わせフォームTOPにする
 Route::get('/', [ContactController::class, 'index'])->name('contact.index');
@@ -31,11 +32,12 @@ Route::middleware('auth')->group(function () {
 // 認証ルート（ログイン・ユーザー登録）
 require __DIR__.'/auth.php';
 
-// ▼ 管理画面
-use App\Http\Controllers\AdminController;
+// ▼ 管理画面（ログイン必須）
+Route::middleware('auth')->prefix('admin')->group(function () {
 
-Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/{id}', [AdminController::class, 'show'])->name('admin.show');
     Route::delete('/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+
+
 });
