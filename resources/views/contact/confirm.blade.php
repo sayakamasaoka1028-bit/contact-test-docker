@@ -40,7 +40,7 @@
 
         <tr>
             <th>お問い合わせ種類</th>
-            <td>{{ $categories->firstWhere('id', $data['category_id'])->name }}</td>
+            <td>{{ $categories->firstWhere('id', $data['category_id'])->content }}</td>
         </tr>
 
         <tr>

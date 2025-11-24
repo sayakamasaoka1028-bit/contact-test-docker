@@ -10,9 +10,17 @@
 
     <!-- 上部ヘッダー -->
     <div class="w-full bg-[#f7f2ee] py-4 shadow-sm mb-8">
-        <div class="max-w-5xl mx-auto flex justify-between items-center px-4">
-            <h1 class="text-xl font-semibold text-gray-700">FashionablyLate</h1>
-            <a href="#" class="text-sm text-gray-600 hover:text-gray-800">Logout</a>
+         <div class="max-w-5xl mx-auto flex justify-center items-center relative px-4">
+<!-- 中央寄せタイトル -->
+        <h1 class="text-xl font-semibold text-gray-700 text-center w-full">
+            FashionablyLate
+        </h1>
+
+       <!-- 右端固定 Logout -->
+        <a href="#"
+           class="absolute right-4 text-sm text-gray-600 hover:text-gray-800">
+            Logout
+        </a>
         </div>
     </div>
 <div class="max-w-5xl mx-auto bg-white shadow-md rounded p-6">
@@ -85,7 +93,7 @@
         <!-- 一覧テーブル -->
         <table class="w-full border-collapse">
             <thead>
-                <tr class="bg-[#e8e1db] text-left">
+                <tr class="bg-[#f3ebe4] text-left border-b border-[#d6ccc6]">
                     <th class="p-3 border">ID</th>
                     <th class="p-3 border">氏名</th>
                     <th class="p-3 border">性別</th>
@@ -142,9 +150,11 @@
         </table>
 
         <!-- ページネーション -->
-        <div class="mt-4">
-            {{ $contacts->links() }}
-        </div>
+        <div class="mt-6 flex justify-center">
+             {{ $contacts->links() }}
+       </div>
+
+
 
     </div>
 
