@@ -1,157 +1,114 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# COACHTECH 基礎学習ターム  
+## 確認テスト：お問い合わせフォーム
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-
-
-# お問い合わせフォーム（確認テスト提出用）
-
-このアプリケーションは、お問い合わせフォームおよび管理画面で構成される Laravel アプリです。
-
----
-
-## 📌 使用技術
-- Laravel 10+
-- PHP 8.2
-- SQLite
-- Tailwind CSS
-- Breeze（認証周り）
-- GitHub でバージョン管理
+本リポジトリは、COACHTECH 基礎学習タームの確認テストとして作成した  
+「お問い合わせフォーム」アプリケーションです。
 
 ---
 
 ## 📌 機能一覧
 
-### ■ お問い合わせフォーム（一般ユーザー）
-- 入力画面 
-- 確認画面 
-- 完了（サンクス）画面 
-- バリデーション 
-- DB 保存 
+### ▼ フロント側（ユーザー）
 
-### ■ 管理画面（管理者ユーザー）
-- ログイン必須（認証）
-- 一覧表示（ページネーション）
-- 検索機能 
-  - 氏名 
-  - 性別 
-  - お問い合わせ種類 
-  - 日付範囲 
-- 詳細モーダル表示 
-- 削除機能 
+1. **入力画面（/）**
+   - 姓・名
+   - 性別（男性 / 女性 / その他）
+   - メールアドレス
+   - 電話番号
+   - 住所
+   - 建物名（任意）
+   - お問い合わせ種類（カテゴリー）
+   - お問い合わせ内容
 
----
-## 📸 画面キャプチャ
+2. **確認画面（/contact/confirm）**
+   - 入力内容を一覧表示
+   - 「修正」「送信」ボタンあり
 
-### ▼ 入力画面
-![input](./スクリーンショット%202025-11-24%20155556.png)
-
-### ▼ 確認画面
-![confirm](./スクリーンショット%202025-11-24%20155614%20-%20コピー.png)
-
-### ▼ サンクス画面
-![thanks](./スクリーンショット%202025-11-24%20155605.png)
-
-### ▼ ログイン画面
-![login](./スクリーンショット%202025-11-24%20155715.png)
-
-### ▼ 管理画面（一覧）
-![admin](./スクリーンショット%202025-11-24%201157302.png)
-
-### ▼ 管理画面（詳細モーダル）
-![detail](./スクリーンショット%202025-11-24%20155733.png)
-
+3. **完了画面（/contact/thanks）**
+   - 「Thank you」表示
+   - HOME へ戻る
 
 ---
 
-## 📦 セットアップ
+### ▼ 管理画面（/admin）
+- 氏名検索（姓・名・フルネーム部分一致 OK）
+- 性別検索
+- お問い合わせ種類検索
+- 登録日検索
+- メール送信可否（可 / 不可）
+- 一覧表示（ページネーション対応）
+- 詳細表示
+- 削除機能（単体 / 一括）
+
+---
+
+## 🗂 使用技術
+
+| 種類       | 内容                     |
+|------------|--------------------------|
+| フレームワーク | Laravel 10.x          |
+| 言語       | PHP 8.2                 |
+| DB         | SQLite                  |
+| CSS        | TailwindCSS             |
+| 認証       | Breeze（ログインのみ） |
 
 
 ---
 
-## ✨ 備考
-- Breeze を使って認証機能を実装
-- TailwindCSS によるスタイリング
-- UI は提出課題のデザインに合わせて調整
+## 🧱 ER 図
+### contacts
+- id
+- last_name
+- first_name
+- gender
+- email
+- tel
+- address
+- building
+- category_id
+- detail
+- created_at
+- updated_at
+
+### categories
+- id
+- content
+- created_at
+- updated_at
+
+
+---
+
+## 📄 画面構成（7画面）
+
+1. 入力画面
+2. 確認画面
+3. 完了画面
+4. 管理一覧
+5. 管理詳細 
+6. 管理削除（確認） 
+7. ログイン画面（Breeze）
+
+---
+
+## 📝 セットアップ方法
 
 ```bash
-git clone (https://github.com/sayakamasaoka1028-bit/contact-test-.git)
-cd contact-test-
-
+git clone https://github.com/sayakamasaoka1028-bit/contact-test.git
+cd contact-test
 composer install
-npm install
-npm run build
-
 cp .env.example .env
 php artisan key:generate
 
 touch database/database.sqlite
 
-php artisan migrate
-php artisan serve
+php artisan migrate --seed
+npm install
+npm run build
+
+php artisan serve --port=8001
 ```
+👩‍💻 作成者
 
----
-
-## ✨ 備考
-- Breeze を使って認証機能を実装
-- TailwindCSS によるスタイリング
-- UI は提出課題のデザインに合わせて調整
-
-
+COACHTECH 受講生
+脇山 沙弥華
