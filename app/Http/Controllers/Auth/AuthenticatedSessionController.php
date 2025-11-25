@@ -28,7 +28,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+
+    // ログイン後は /admin に飛ぶように変更
+    return redirect()->intended('/admin');
     }
 
     /**
