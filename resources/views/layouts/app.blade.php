@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>FashionablyLate</title>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+</head>
 
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
+<body class="font-sans antialiased bg-[#f6f3f0]">
 
-            <!-- Page Content -->
-            <main>
+    <!-- ヘッダー（COACHTECHデザイン） -->
+    <header class="w-full bg-white shadow-sm border-b border-[#e4ddd5] py-4 mb-8">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-6">
+            <h1 class="text-xl font-semibold text-[#7b5a44] tracking-wide">
+                FashionablyLate
+            </h1>
 
-            @yield('content')
-            </main>
+            @auth
+            <nav>
+                <a href="/admin" class="text-[#7b5a44] hover:underline mr-4">管理画面</a>
+                <form action="/logout" method="POST" class="inline">
+                    @csrf
+                    <button class="text-[#7b5a44] hover:underline">
+                        ログアウト
+                    </button>
+                </form>
+            </nav>
+            @endauth
+
+            @guest
+            <nav>
+                <a href="/login" class="text-[#7b5a44] hover:underline mr-4">ログイン</a>
+                <a href="/register" class="text-[#7b5a44] hover:underline">登録</a>
+            </nav>
+            @endguest
         </div>
-    </body>
+    </header>
+
+    <!-- メイン -->
+    <main class="max-w-6xl mx-auto px-6">
+        @yield('content')
+    </main>
+
+</body>
 </html>

@@ -1,11 +1,13 @@
 @extends('layouts.contact')
 
+@section('title', 'Confirm')
+
 @section('content')
 
 <div class="confirm-wrapper">
 
     <h1 class="form-title">FashionablyLate</h1>
-    <h2 class="form-subtitle">Confirm</h2>
+    <h1 class="form-title">Confirm</h1>
 
     <table class="confirm-table">
         <tr>

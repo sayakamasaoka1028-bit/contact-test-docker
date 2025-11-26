@@ -1,28 +1,33 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>FashionablyLate</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-[#f5eee7] min-h-screen">
+<body class="font-sans antialiased bg-[#f6f3f0]">
 
-    <!-- ヘッダー -->
-    <header class="w-full bg-[#f5eee7] py-4 shadow-sm">
-        <div class="max-w-5xl mx-auto flex justify-between items-center px-4">
-            <h1 class="text-xl font-semibold text-gray-700">FashionablyLate</h1>
-
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}"
-                   class="text-sm text-gray-600 hover:text-gray-800">
-                   register
-                </a>
-            @endif
+    <!-- 同じデザインのヘッダー -->
+    <header class="w-full bg-white shadow-sm border-b border-[#e4ddd5] py-4 mb-8">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-6">
+            <h1 class="text-xl font-semibold text-[#7b5a44] tracking-wide">
+                FashionablyLate
+            </h1>
         </div>
     </header>
 
-    <main>
+    <!-- 中央カード（login/register共通） -->
+    <main class="max-w-md mx-auto bg-white border border-[#e4ddd5] shadow p-10 rounded">
         @yield('content')
     </main>
 

@@ -1,28 +1,77 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>サンクスページ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+@extends('layouts.contact')
 
-<body class="bg-white min-h-screen flex items-center justify-center relative">
+@section('title', 'Thanks')
 
-    <!-- 背景の薄い Thank you -->
-    <div class="absolute inset-0 flex items-center justify-center">
-        <p class="text-[160px] text-gray-200 font-bold select-none">Thank you</p>
-    </div>
+@section('content')
 
-    <!-- メインコンテンツ -->
-    <div class="relative z-10 text-center">
+<style>
+    /* レイアウトの干渉を完全リセット */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .contact-wrapper,
+    .contact-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+    }
 
-        <p class="text-gray-700 text-lg mb-6">お問い合わせありがとうございました</p>
+    /* THANKSページ専用レイアウト */
+    .thanks-wrapper {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+
+    .thanks-bg {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 180px;
+        font-weight: 700;
+        color: #eee8e4;
+        opacity: 0.55;
+        pointer-events: none;
+        user-select: none;
+        z-index: 1;
+    }
+
+    .thanks-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+    }
+</style>
+
+<div class="thanks-wrapper">
+
+    <!-- 背景 Thank you -->
+    <div class="thanks-bg">Thank you</div>
+
+    <!-- メイン表示 -->
+    <div class="thanks-content">
+
+        <p class="text-gray-700 text-lg mb-6">
+            お問い合わせありがとうございました
+        </p>
 
         <a href="{{ route('contact.index') }}"
-           class="inline-block bg-[#8d7c6f] text-white px-6 py-2 rounded">
+           class="inline-block px-6 py-2 rounded text-white"
+           style="background:#7b5a44; font-weight:600;">
             HOME
         </a>
+
     </div>
 
-</body>
-</html>
+</div>
+
+@endsection
