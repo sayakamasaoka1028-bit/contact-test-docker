@@ -21,10 +21,10 @@
         </div>
     </header>
 
-    <!-- メイン内容（ここがポイント！中央寄せ） -->
+    <!-- メイン（中央のログインカード） -->
     <main class="flex justify-center">
-        <div class="max-w-md w-full bg-white border border-[#e4ddd5] shadow p-10 rounded">
-            {{ $slot }}
+        <div class="w-[380px] min-h-[380px] bg-white p-10 rounded-lg border border-[#d8ccc0] shadow-sm flex flex-col justify-center">
+            @yield('content')
         </div>
     </main>
 

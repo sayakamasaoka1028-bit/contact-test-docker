@@ -7,6 +7,7 @@
 <div class="confirm-wrapper">
 
     <h1 class="form-title">FashionablyLate</h1>
+    <hr style="border-top:1px solid #d8ccc0; margin: 15px 0 25px;">
     <h1 class="form-title">Confirm</h1>
 
     <table class="confirm-table">
