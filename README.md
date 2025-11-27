@@ -12,23 +12,23 @@
 # 📗 1. 画面一覧（スクリーンショット）
 
 ### ■ 入力画面
-![入力画面](public/images/スクリーンショット 2025-11-27 191106.png)
+![入力画面](public/images/input.png)
 
 
 ### ■ 確認画面
-![確認画面](public/images/スクリーンショット 2025-11-27 191117.png)
+![確認画面](public/images/confirm.png)
 
 
 ### ■ 完了画面
-![完了画面](public/images/スクリーンショット 2025-11-27 191130.png)
+![完了画面](public/images/thanks.png)
 
 
 ### ■ 管理画面（一覧）
-![管理画面一覧](public/images/スクリーンショット 2025-11-27 191221.png)
+![管理画面一覧](public/images/admin_index.png)
 
 
 ### ■ 管理画面（詳細）
-![詳細画面](public/images/スクリーンショット 2025-11-27 191251.png)
+![詳細画面](public/images/admin_show.png)
 
 
 # 📌 2. 機能一覧
@@ -109,7 +109,7 @@
 ---
 
 # 🗂 4. ER 図
-![ER図](public/images/スクリーンショット 2025-11-26 065519.png)
+![ER図](public/images/er.png)
 
 ---
 
