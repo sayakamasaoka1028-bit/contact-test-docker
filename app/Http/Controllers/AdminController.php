@@ -11,50 +11,54 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         $query = Contact::with('category');
-        // ▼ 氏名検索（強化版）
+
+        // ▼ 氏名検索（AND検索対応版）
         if ($request->filled('keyword')) {
-            $keyword = $request->keyword;
+            $keyword = str_replace('　', ' ', $request->keyword); // 全角→半角スペースへ変換
+            $parts = array_filter(explode(' ', $keyword));        // ["山口", "たつや"]
 
-            // 全角スペースを半角に
-            $keyword = str_replace('　', ' ', $keyword);
+            $query->where(function ($q) use ($parts) {
 
-            // スペースで区切る（山田 太郎 → ["山田","太郎"]）
-            $parts = explode(' ', $keyword);
-
-            $query->where(function ($q) use ($parts, $keyword) {
-
-                // 姓・名部分一致（1文字でもOK）
-                foreach ($parts as $part) {
-                    if ($part === '') continue;
-                    $q->orWhere('last_name', 'like', "%{$part}%")
-                      ->orWhere('first_name', 'like', "%{$part}%");
+                if (count($parts) == 2) {
+                    // 「姓」＋「名」の完全2単語検索（理想形）
+                    $q->where('last_name', 'like', "%{$parts[0]}%")
+                      ->where('first_name', 'like', "%{$parts[1]}%");
+                } else {
+                    // 1単語だけの場合は部分一致検索
+                    $q->where('last_name', 'like', "%{$parts[0]}%")
+                      ->orWhere('first_name', 'like', "%{$parts[0]}%");
                 }
-
-                // フルネーム（スペース無し）でも検索
-                $q->orWhereRaw("CONCAT(last_name, first_name) LIKE ?", ["%{$keyword}%"]);
             });
-
         }
 
-        // 性別検索
+        // ▼ 性別検索
         if ($request->filled('gender')) {
             $query->where('gender', $request->gender);
         }
 
-        // カテゴリ検索
+        // ▼ カテゴリ検索
         if ($request->filled('category_id')) {
             $query->where('category_id', $request->category_id);
         }
 
-        // 期間検索
+        // ▼ 期間検索（開始日だけ・終了日だけでも検索OK）
         if ($request->filled('from') && $request->filled('to')) {
-            $query->whereBetween('created_at', [$request->from, $request->to]);
+        // 開始日 ＆ 終了日の両方
+        $query->whereBetween('created_at', [$request->from, $request->to]);
+
+        } elseif ($request->filled('from')) {
+        // 開始日だけ指定
+        $query->where('created_at', '>=', $request->from);
+
+        } elseif ($request->filled('to')) {
+        // 終了日だけ指定
+        $query->where('created_at', '<=', $request->to);
         }
 
-        // データ取得
+        // ▼ 結果取得（最新順）
         $contacts = $query->orderBy('created_at', 'desc')->paginate(10);
 
-        // カテゴリ一覧
+        // ▼ カテゴリ取得
         $categories = Category::all();
 
         return view('admin.index', compact('contacts', 'categories'));
@@ -64,7 +68,6 @@ class AdminController extends Controller
     public function show($id)
     {
         $contact = Contact::with('category')->findOrFail($id);
-
         return view('admin.show', compact('contact'));
     }
 
@@ -72,7 +75,6 @@ class AdminController extends Controller
     public function destroy($id)
     {
         Contact::findOrFail($id)->delete();
-
         return redirect()->route('admin.index')->with('message', '削除しました');
     }
 }
