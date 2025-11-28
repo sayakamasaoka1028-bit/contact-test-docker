@@ -1,0 +1,384 @@
+/* Contact page custom styles */
+
+/* ページ全体の背景色を、デザインに近い柔らかいグレーに */
+body.bg-gray-100 {
+    background-color: #f6f3f0;
+}
+
+/* 全体ラッパー */
+.contact-wrapper {
+    padding: 50px 0 80px;
+}
+
+/* 白い大きなボックス（中央） */
+.contact-container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #f0e7df;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+    padding: 40px 80px 60px;
+}
+
+/* 一番上のタイトル FashionablyLate */
+.contact-title {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f0e7df;
+}
+
+/* Contact 見出し */
+.contact-box {
+    margin-top: 10px;
+}
+
+.contact-heading {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 35px;
+    color: #5e4a3b;
+}
+
+/* フォーム全体 */
+.contact-form {
+    font-size: 14px;
+}
+
+/* 1行ごとのレイアウト：左ラベル / 右入力欄 */
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+/* 左ラベル部分 */
+.label {
+    width: 180px;
+    padding-right: 16px;
+    font-size: 14px;
+    color: #b38a73; /* 赤茶っぽい色 */
+    text-align: left;
+    line-height: 1.4;
+}
+
+/* 必須マーク */
+.req {
+    color: #e15b5b;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* 右側の入力エリア全体 */
+.row .input,
+.row .textarea,
+.row .radio-group,
+.row select {
+    flex: 1;
+}
+
+/* テキスト入力・セレクト共通スタイル */
+.input,
+select {
+    width: 100%;
+    height: 38px;
+    border: 1px solid #e2d6c8;
+    background-color: #f8f4ef;
+    padding: 6px 10px;
+    border-radius: 0;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* セレクトボックス（矢印はブラウザ任せ） */
+select {
+    appearance: auto;
+}
+
+/* ラジオボタン */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+    color: #554236;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 4px;
+}
+
+/* テキストエリア */
+.textarea {
+    width: 100%;
+    min-height: 140px;
+    border: 1px solid #e2d6c8;
+    background-color: #f8f4ef;
+    padding: 10px;
+    border-radius: 0;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* ボタンエリア */
+.btn-area {
+    margin-top: 32px;
+    text-align: center;
+}
+
+/* 送信ボタン（確認画面へ） */
+.submit-btn {
+    display: inline-block;
+    min-width: 180px;
+    padding: 10px 30px;
+    background-color: #7b5a44; /* 濃いブラウン */
+    color: #ffffff;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+/* ▼ 追加調整：完全一致バージョン ▼ */
+
+/* ラベル（左側）と入力欄の距離を広げる */
+.label {
+    width: 200px;  /* ← 少し広げた */
+    padding-right: 30px; /* ← ラベルと入力欄の余白を増やす */
+}
+
+/* 入力欄の背景色を参考画像のトーンに近づける */
+.input,
+select,
+.textarea {
+    background-color: #f9f6f2 !important;
+    border: 1px solid #e3d8cc;
+}
+
+/* 必須マーク（＊）をピンク寄りの赤に */
+.req {
+    color: #e15b5b !important;
+}
+
+/* ラジオボタンの間隔を広く */
+.radio-group {
+    gap: 32px;
+}
+
+/* セレクトボックスの高さ統一 */
+select {
+    height: 38px;
+    padding-left: 10px;
+}
+
+/* フォーム全体の横幅調整 */
+.contact-container {
+    max-width: 1050px; /* ← 少し横に広げて余裕を持たせる */
+    padding: 40px 100px 60px; /* ← 横の余白も広げる */
+}
+
+/* textarea の背景色も淡く統一 */
+.textarea {
+    background-color: #f9f6f2 !important;
+}
+
+/* ボタン色の調整：参考画像に近い */
+.submit-btn {
+    background-color: #7b5a44;
+}
+
+/* ボタンの文字間隔を調整 */
+.submit-btn {
+    letter-spacing: 0.08em;
+}
+/* ▼ 完全一致微調整バージョン ▼ */
+
+/* 左ラベルの色・位置を調整（赤茶に寄せる） */
+.label {
+    color: #b38a73 !important;
+    display: flex;
+    align-items: center; /* ← 縦中央揃え */
+    font-size: 14px;
+}
+
+/* 入力欄の角を少し丸く＆高さアップ */
+.input,
+select,
+.textarea {
+    background-color: #f9f6f2 !important;
+    border: 1px solid #e7ded4 !important;
+    height: 42px !important;
+    border-radius: 3px !important;
+}
+
+/* ラジオボタンの位置を少し下げて中央へ */
+.radio-group {
+    display: flex;
+    align-items: center; /* ← 縦中央 */
+    gap: 28px;
+    padding-top: 4px;
+}
+
+/* テキストエリアも角丸＋背景調整 */
+.textarea {
+    min-height: 150px;
+    border-radius: 3px !important;
+}
+
+/* セレクト背景色をもっと薄く */
+select {
+    background-color: #f9f6f2 !important;
+}
+
+/* ラベルと入力欄の距離をさらに微調整 */
+.row {
+    margin-bottom: 20px;
+}
+
+.label {
+    width: 210px;
+    padding-right: 34px;
+}
+
+/* ボタンの色を理想画像に近づける */
+.submit-btn {
+    background-color: #7b5a44 !important;
+    border-radius: 3px;
+    padding: 12px 40px;
+}
+/* ============================
+   Confirm Page Styles
+============================ */
+
+/* Confirm wrapper */
+.confirm-wrapper {
+    max-width: 960px;
+    margin: 40px auto 80px;
+    background-color: #ffffff;
+    border: 1px solid #f0e7df;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+    padding: 40px 80px 60px;
+}
+
+/* Title（FashionablyLate） */
+.form-title {
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+/* Subtitle（Confirm） */
+.form-subtitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 32px;
+    color: #6b5e52;
+}
+
+/* 確認テーブル */
+.confirm-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+.confirm-table th {
+    width: 25%;
+    background-color: #faf7f3;
+    padding: 14px 18px;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 1px solid #f0e7df;
+}
+
+.confirm-table td {
+    width: 75%;
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0e7df;
+}
+
+.confirm-table .text-area {
+    white-space: pre-wrap;
+}
+
+/* ボタンエリア */
+.btn-area {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* 共通ボタン */
+.submit-btn,
+.back-btn {
+    padding: 10px 32px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+/* 送信ボタン（赤系） */
+.submit-btn {
+    background-color: #b55d4c;
+    color: #ffffff;
+}
+
+.submit-btn:hover {
+    background-color: #a65242;
+}
+
+/* 修正ボタン（白＋枠） */
+.back-btn {
+    background-color: #ffffff;
+    color: #6b5e52;
+    border: 1px solid #c8bfb7;
+}
+
+.back-btn:hover {
+    background-color: #f5f2ee;
+}
+
+/* inline form（ボタン横並び用） */
+.inline-form {
+    display: inline-block;
+}
+/* ====== Confirm Page微調整 ====== */
+
+/* 外側ボックスの余白を増やす */
+.confirm-wrapper {
+    margin-top: 60px;
+    margin-bottom: 100px;
+    padding: 50px 100px 70px;
+}
+
+/* Confirm 見出しの余白 */
+.form-subtitle {
+    margin-bottom: 40px;
+}
+
+/* 左側セルの色を少し濃いベージュに */
+.confirm-table th {
+    background-color: #f3ebe4;
+}
+
+/* テーブルの文字サイズ調整 */
+.confirm-table th,
+.confirm-table td {
+    font-size: 15px;
+}
+
+/* ボタンをもう少し下に */
+.btn-area {
+    margin-top: 40px;
+}

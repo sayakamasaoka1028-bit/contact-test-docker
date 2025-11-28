@@ -21,9 +21,9 @@
         </div>
     </header>
 
-    <!-- メイン（中央カード） -->
-    <main class="flex justify-center pt-10 pb-20">
-        <div class="w-[380px] bg-white p-10 rounded-lg border border-[#d8ccc0] shadow-sm">
+    <!-- メイン（中央のログインカード） -->
+    <main class="flex justify-center">
+        <div class="w-[380px] min-h-[380px] bg-white p-10 rounded-lg border border-[#d8ccc0] shadow-sm flex flex-col justify-center">
             @yield('content')
         </div>
     </main>
