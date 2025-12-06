@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>FashionablyLate - @yield('title')</title>
+   @if (app()->environment('local'))
+    {{-- ローカル環境：Vite を使う --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+   @else
+    {{-- Docker / 本番環境：ビルド済みファイル --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-DyA8lrYD.css') }}">
+    <script src="{{ asset('build/assets/app-CJy8ASEk.js') }}" defer></script>
+   @endif
+
 
     <style>
         body {

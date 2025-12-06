@@ -13,10 +13,14 @@
         </h1>
 
         {{-- ★ 下の薄い線（見本通り） --}}
-        <hr class="my-4" style="border-top:1px solid #e4ddd5;">
+        <hr class="my-4" style="border: none; border-top: 1px solid #e4ddd5; margin-top: 35px;">
 
         {{-- ★ Contact 見出し --}}
-        <h2 class="contact-heading text-left" style="color:#7b5a44;">Contact</h2>
+        <h2 class="contact-heading text-center"
+        style="color:#7b5a44; font-weight:700; margin-bottom:20px;">
+        Contact
+        </h2>
+
 
         <form method="POST" action="{{ route('contact.confirm') }}" class="contact-form">
             @csrf

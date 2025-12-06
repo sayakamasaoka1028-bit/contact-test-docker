@@ -12,7 +12,13 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
+@if (app()->environment('local'))
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+@else
+    <link rel="stylesheet" href="{{ asset('build/assets/app-DyA8lrYD.css') }}">
+    <script src="{{ asset('build/assets/app-CJy8ASEk.js') }}" defer></script>
+@endif
+
 </head>
 
 <body class="font-sans antialiased bg-[#f6f3f0]">
